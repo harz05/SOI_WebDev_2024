@@ -10,7 +10,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const result = await axios.post('https://soi-web-dev-2024.vercel.app/login', { email, password });
+          const result = await axios.post('https://localhost:3000/login', { email, password });
           console.log(result);
           if (result.data) {
             localStorage.setItem('user', JSON.stringify(result.data));

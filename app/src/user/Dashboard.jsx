@@ -10,7 +10,7 @@ const Dashboard = () => {
       const storedUser = JSON.parse(localStorage.getItem('user'));
       if (storedUser && storedUser.email) {
         try {
-          const response = await axios.get(`https://soi-web-dev-2024.vercel.app/all-users/${storedUser.email}`);
+          const response = await axios.get(`https://localhost:3000/all-users/${storedUser.email}`);
           setProfile(response.data);
         } catch (error) {
           console.error(error);

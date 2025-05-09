@@ -1,0 +1,37 @@
+services:
+  app:
+    build: .
+    ports:
+      - "5173:5173"
+    networks:
+      -front
+  server:
+    build: .
+    ports:
+      - "3000:3000" 
+    networks:
+      - front
+   # depends_on:
+   #   - mongo
+ ## mongo:
+ #   image: mongo
+  #  ports:
+  #    - "27017:27017"
+  #  networks:
+  #    - front
+ # #  volumes:
+  #    - mongo-data:/data/db
+  #  environment:
+  #    MONGO_INITDB_ROOT_USERNAME: root
+  #    MONGO_INITDB_ROOT_PASSWORD: example
+  #    MONGO_INITDB_DATABASE: example
+  #  restart: always *#
+networks:
+  front:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
+    
+      

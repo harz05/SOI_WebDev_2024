@@ -25,13 +25,13 @@ const AllUsers = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('https://soi-web-dev-2024.vercel.app/all-users')
+    axios.get('https://localhost:3000/all-users')
       .then(response => setUsers(response.data))
       .catch(error => console.error(error));
   }, []);
 
   const handleDeleteUser = (id) => {
-    fetch(`https://soi-web-dev-2024.vercel.app/users/${id}`, {
+    fetch(`https://localhost:3000/users/${id}`, {
       method: "DELETE",
     }).then(res => res.json()).then(data => {
       alert("User deleted successfully");
@@ -40,7 +40,7 @@ const AllUsers = () => {
   };
 
   const handleDeleteBook = (userId, bookId) => {
-    fetch(`https://soi-web-dev-2024.vercel.app/users/${userId}/books/${bookId}`, {
+    fetch(`https://localhost:3000/users/${userId}/books/${bookId}`, {
       method: "DELETE",
     }).then(res => res.json()).then(data => {
       alert("Book deleted successfully");

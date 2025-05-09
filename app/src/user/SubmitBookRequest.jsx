@@ -20,7 +20,7 @@ const SubmitBookRequest = () => {
 
   const fetchProfile = async (email) => {
     try {
-      const response = await axios.get(`https://soi-web-dev-2024.vercel.app/all-users/${email}`);
+      const response = await axios.get(`https://localhost:3000/all-users/${email}`);
       setProfile(response.data);
     } catch (error) {
       console.error('Error fetching profile:', error);
@@ -29,7 +29,7 @@ const SubmitBookRequest = () => {
 
   useEffect(() => {
     axios
-      .get('https://soi-web-dev-2024.vercel.app/bookRequests')
+      .get('https://localhost:3000/bookRequests')
       .then(response => setSubmittedBooks(response.data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
@@ -47,7 +47,7 @@ const SubmitBookRequest = () => {
     };
 
     axios
-      .post('https://soi-web-dev-2024.vercel.app/bookRequests', newBookRequest)
+      .post('https://localhost:3000/bookRequests', newBookRequest)
       .then(response => {
         setSubmittedBooks([...submittedBooks, response.data]);
         setBookName('');
@@ -59,7 +59,7 @@ const SubmitBookRequest = () => {
 
   const handleLike = async (id) => {
     try {
-      const response = await axios.patch(`https://soi-web-dev-2024.vercel.app/bookRequests/${id}/like`);
+      const response = await axios.patch(`https://localhost:3000/bookRequests/${id}/like`);
       setSubmittedBooks(submittedBooks.map(book => 
         book._id === id ? { ...book, likes: response.data.likes } : book
       ));

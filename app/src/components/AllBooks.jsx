@@ -8,7 +8,7 @@ const AllBooks = () => {
     const [selectedDepartment, setSelectedDepartment] = useState('All');
 
     useEffect(() => {
-        fetch("https://soi-web-dev-2024.vercel.app/all-books")
+        fetch("https://localhost:3000/all-books")
             .then(res => res.json())
             .then(data => {
                 setBooks(data);

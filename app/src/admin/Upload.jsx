@@ -36,7 +36,7 @@ const Upload = () => {
       title,description,author,genre,department,count,vendor,vendor_id,publisher,publisher_id
     }
     //console.log(bookObj)
-    fetch("https://soi-web-dev-2024.vercel.app/upload-book", { 
+    fetch("https://localhost:3000/upload-book", { 
       method: "POST",
       headers:{
         "Content-type": "application/json"

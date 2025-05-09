@@ -22,7 +22,7 @@ const ChangePassword = () => {
 
     if (newPassword === confirmPassword) {
       try {
-        const response = await axios.patch('https://soi-web-dev-2024.vercel.app/change-password', {
+        const response = await axios.patch('https://localhost:3000/change-password', {
           email,
           newPassword,
         });

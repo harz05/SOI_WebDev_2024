@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         {
             path: '/books/:id',
             element: <SingleBook/>,
-            loader: ({params}) => fetch(`https://soi-web-dev-2024.vercel.app/all-books/${params.id}`)
+            loader: ({params}) => fetch(`https://localhost:3000/all-books/${params.id}`)
         },
        
       ]
@@ -89,12 +89,12 @@ const router = createBrowserRouter([
             {
                 path: '/admin/dashboard/edit/:id',
                 element: <EditBooks/>,
-                loader: ({params}) => fetch(`https://soi-web-dev-2024.vercel.app/all-books/${params.id}`)
+                loader: ({params}) => fetch(`https://localhost:3000/all-books/${params.id}`)
             },
             {
                 path: '/admin/dashboard/users/:id',
                 element: <UpdateUserBooks/>,
-                loader: ({params}) => fetch(`https://soi-web-dev-2024.vercel.app/all-users/${params.id}`)
+                loader: ({params}) => fetch(`https://localhost:3000/all-users/${params.id}`)
             }
         ]
     },

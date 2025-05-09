@@ -20,7 +20,7 @@ const Contacts = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://soi-web-dev-2024.vercel.app/contacts', {
+      const response = await fetch('https://localhost:3000/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

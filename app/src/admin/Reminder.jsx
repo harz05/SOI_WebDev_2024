@@ -11,7 +11,7 @@ const Reminder = () => {
 
   const fetchReminders = async () => {
     try {
-      const response = await axios.get('https://soi-web-dev-2024.vercel.app/reminders');
+      const response = await axios.get('https://localhost:3000/reminders');
       setReminders(response.data);
     } catch (error) {
       console.error('Error fetching reminders:', error);

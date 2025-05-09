@@ -26,7 +26,7 @@ const EditProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.patch('https://soi-web-dev-2024.vercel.app/update-user', profile);
+      const result = await axios.patch('https://localhost:3000/update-user', profile);
       localStorage.setItem('user', JSON.stringify(result.data));
       alert("Profile updated successfully");
     } catch (error) {

@@ -9,7 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchUserCount = async () => {
       try {
-        const response = await axios.get('https://soi-web-dev-2024.vercel.app/all-users');
+        const response = await axios.get('https://localhost:3000/all-users');
         setUserCount(response.data.length);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -18,7 +18,7 @@ const Dashboard = () => {
 
     const fetchBookCount = async () => {
       try {
-        const response = await axios.get('https://soi-web-dev-2024.vercel.app/all-books');
+        const response = await axios.get('https://localhost:3000/all-books');
         setBookCount(response.data.length);
       } catch (error) {
         console.error('Error fetching books:', error);

@@ -30,7 +30,7 @@ const Manage = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('All');
 
   useEffect(() => {
-    axios.get('https://soi-web-dev-2024.vercel.app/all-books')
+    axios.get('https://localhost:3000/all-books')
       .then(response => {
         console.log('Fetched Books:', response.data);
         setBooks(response.data);
@@ -39,7 +39,7 @@ const Manage = () => {
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`https://soi-web-dev-2024.vercel.app/book/${id}`, {
+    fetch(`https://localhost:3000/book/${id}`, {
       method: "DELETE",
     }).then(res => res.json()).then(data => {
       alert("Book deleted successfully");
@@ -56,7 +56,7 @@ const Manage = () => {
   };
 
   const handleIncrement = (id) => {
-    axios.patch(`https://soi-web-dev-2024.vercel.app/book/${id}/increment`)
+    axios.patch(`https://localhost:3000/book/${id}/increment`)
       .then(response => {
         setBooks(books.map(book => 
           book._id === id ? { ...book, count: book.count + 1 } : book
@@ -66,7 +66,7 @@ const Manage = () => {
   };
 
   const handleDecrement = (id) => {
-    axios.patch(`https://soi-web-dev-2024.vercel.app/book/${id}/decrement`)
+    axios.patch(`https://localhost:3000/book/${id}/decrement`)
       .then(response => {
         setBooks(books.map(book => 
           book._id === id ? { ...book, count: book.count - 1 } : book

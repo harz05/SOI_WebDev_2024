@@ -12,7 +12,7 @@ export default function Signup() {
     
     const handleSubmit = (e) =>{
         e.preventDefault()
-        axios.post('https://soi-web-dev-2024.vercel.app/register',{name,email,password,rollNo})
+        axios.post('https://localhost:3000/register',{name,email,password,rollNo})
         .then(result => {console.log(result)
             navigate('/login')
         })
